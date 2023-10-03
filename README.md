@@ -78,9 +78,14 @@ nano /var/www/html/index.html
 
 ### Limiter le nombre de requêtes par seconde
 
-Vous pouvez limiter le nombre de requêtes par seconde à l'aide du module mod_qos.
 
-#### Installer le module
+### Limiter le nombre de requêtes par seconde
+
+#### Défi:
+Écrire un script (python/bash) qui fait 20 requêtes par secondes sur le site que nous avons fait (localhost).
+Vous pouvez déjouer ce script en limitant le nombre de requêtes par seconde à l'aide du module mod_qos.
+
+#### Installer le module QoS
 
 ```bash
 sudo a2enmod qos
@@ -100,3 +105,11 @@ service apache2 restart
     QS_LocRequestLimitMatch ^/ 10
 </IfModule>
 ```
+
+#### Redémarrer apache
+
+```
+service apache2 restart.
+```
+
+
