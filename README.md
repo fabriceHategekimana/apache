@@ -66,13 +66,37 @@ nano /etc/apache2/sites-available/000-default.conf
 
 Trouver l'emplacement du fichier avec la directive `DocumentRoot`:
 
-```
+```bash
 DocumentRoot /var/www/html
 ```
 
 Puis modifier le fichier `index.html` correspondant:
 
-```
+```bash
 nano /var/www/html/index.html
 ```
 
+### Limiter le nombre de requêtes par seconde
+
+Vous pouvez limiter le nombre de requêtes par seconde à l'aide du module mod_qos.
+
+#### Installer le module
+
+```bash
+sudo a2enmod qos
+```
+
+#### Relancer le service Apache
+
+```bash
+service apache2 restart
+```
+
+#### Ajouter la directive dans le fichier de configuration du site
+
+```
+<IfModule mod_qos.c>
+    # Limitez le nombre de requêtes par seconde à 10
+    QS_LocRequestLimitMatch ^/ 10
+</IfModule>
+```
