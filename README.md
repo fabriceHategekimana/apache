@@ -78,9 +78,6 @@ nano /var/www/html/index.html
 
 ### Limiter le nombre de requêtes par seconde
 
-
-### Limiter le nombre de requêtes par seconde
-
 #### Défi:
 Écrire un script (python/bash) qui fait 20 requêtes par secondes sur le site que nous avons fait (localhost).
 Vous pouvez déjouer ce script en limitant le nombre de requêtes par seconde à l'aide du module mod_qos.
@@ -111,5 +108,13 @@ service apache2 restart
 ```
 service apache2 restart.
 ```
+
+#### Limiter par le nombre de champ d'une requête 
+
+Vous pouvez inspecter le nombre de champs d'une requête avec wireshark ou firefox.
+
+Pour trouver le nombre de champs sur wireshark, il nous faut lire l'interface loopback et filter les requêtes http puis suivre le flux http pour voir la conversation faite sur la machine. Le nombre de champ pourra être trouvé à l'aide 
+
+
 
 
