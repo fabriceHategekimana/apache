@@ -113,8 +113,8 @@ service apache2 restart.
 
 Vous pouvez inspecter le nombre de champs d'une requête avec wireshark ou firefox.
 
-Pour trouver le nombre de champs sur wireshark, il nous faut lire l'interface loopback et filter les requêtes http puis suivre le flux http pour voir la conversation faite sur la machine. Le nombre de champ pourra être trouvé à l'aide 
+Pour trouver le nombre de champs sur wireshark, il nous faut lire l'interface loopback et filter les requêtes http puis suivre le flux http pour voir la conversation faite sur la machine.
 
-
-
-
+```
+LimitRequestFields 50
+```
